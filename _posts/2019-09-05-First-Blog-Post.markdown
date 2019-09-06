@@ -1,5 +1,5 @@
 ---
 layout: "post"
-title: "This is a new Title"
+title: "First Blog Post 9/05"
 ---
-Some Content
+This is some content for my first post as a test.
