@@ -1,0 +1,13 @@
+---
+layout: "post"
+title: "Week 3 Blog Post - 9/12"
+---
+For our second class meeting, we began to dive a little bit deeper into Docker Containers.
+
+As a follow up to assignment 1, we learned a bit more about how a container gets created. We learned that a "dockerfile" is a file that contains pre-defined instructions for the building of a docker image. This image, that is created from the dockerfile, is similar to a snapshot in Virtual Box in that when an image is created then started up, it will be in the a predetermined state specified by the dockerfile.
+
+A dockerfile as mentioned earlier, is a text file with instructions for building a docker image. It contains information for the base image, the bare OS to be used to build the image. This base mage can be one of many Linux variants. Following the base image are a set of user defined instructions. These instructions can be pretty much anything, an example would be instructions to install applications like git, curl or nano.
+
+For our assignment we were tasked to first create a normal Ubuntu container then set up a LAMP stack within the container. As a test trial, we were instructed to create the LAMP stack step-by-step while within the container. This was simple enough, start up a new Ubuntu container, install Apache, MySQL and PHP. Once the stack was installed, we were instructed to then clone a repository from Github to the instance and serve the application that was within. To do this Git, nano, and curl were also installed to the container. Modifications were made to some of the apache files and once that was complete the docker container was serving an application.
+
+Once all that was complete, the real task could be addressed, to create a dockerfile that would be able to set up a LAMP stack. A dockerfile has a basic layout which consists of instructions to the base image followed by varies instructions that can be executed by the CLI automatically. For my dockerfile I used Ubuntu's latest base image and included instructions using the "RUN" command to install all the components I needed; Apache, MySQL and PHP. The RUN command in a dockerfile works simply by using the word "RUN" followed one or many CLI commands like "apt-get install". SO by using the same instructions as the test run, I was about to create this dockerfile which I could then use to build an image of an Ubuntu instance with an existing LAMP stack.
