@@ -1,0 +1,13 @@
+---
+layout: "post"
+title: "Week 4 Blog Post - 9/19"
+---
+For a majority of this week I was working on a project for Comp 484, Web Engineering. During the first 4 weeks of this class we were learning the basics about HTML. This wasn't the first time I had worked with HTML, but because it was not something I had utilized or been exposed to for quite sometime, the professors lectures were a very good refresher into the language.
+
+Some major points that had taught thus far were; common HTML tags, creating list, creating link, embedding images and styling with CSS. We also were taught basic HTML document structure, as well as best practices while creating a website.
+
+With these lesson, along with four homework assignments covering the topics covered in class, our first project was to create a 4 page website that would be styled externally by a .CSS file. The topic for this website was left up to us. The professor explained that we would create a website about something we enjoy or have lot of interests in, it was really up for us to decide. There was however a few restrictions, we would not be allowed to use any tools, this included applications such as Bootstrap. We were also told not to use libraries or any other code-generating applications.
+
+So for my project, I decided to create a website talking about the Star Wars films. First off to do this I installed code editor for my Ubuntu install. I went ahead and chose to use "Brackets". The reason I chose to work with this editor was that it had advantages over others when handling HTML and CSS.
+
+For my website, I create 4 pages, a Home pages that discussed reasons why I enjoy Star Wars. The home page also displayed some of my favorite scenes, quotes and characters as well as my favorite movie within the saga. The remaining 3 pages were dedicated to the films themselves. I was able to create a Navigation bar that for all these pages using a table in my HTML code. To go along with the navigation, I create a styling for the nav bar. I implemented the "a:hover" style to my appropriately classed "nav" navigation bar. I set the nav bar to be black with yellow text that when hovered over the text will expand, to let the user know that they are hovering over link. Within of the "film" pages there were 3 movies to each page starting from Episode 1 to 9. In these pages I also included a quick overview of the films along with the theatrical movie posters. The navigation bar for all the pages remained the same. A variety of CSS was used to style the website. I made changes to the background color, the font family, paddings, margins and others.
