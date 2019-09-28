@@ -1,0 +1,15 @@
+---
+layout: "post"
+title: "Week 5 Blog Post - 9/27"
+---
+
+This past week I worked on Lab 2 which centered around creating 2 Ansible playbooks. Ansible is a tool that allows for configuration of remote machines. It is slightly similar to a dockerfile in that in an Ansible Playbook there are instructions for configuring a machine, in our case a docker container. Ansible uses ssh to connect to a machine and then perform the commands within the playbook without any added software on the destination machines.
+
+For our lab we were instructed to create 2 playbooks and test the them by running the playbooks on the container itself. So to get started the first playbook was supposed to install traceroute. Then make a backup copy of the sudoers file. Then create 2 new groups and add 2 users to each group. Lastly we were supposed to grant sudo powers to on of the groups and sudo for traceroute to the other.
+
+So to do this I created a container and first did an "apt update" and "apt upgrade. I then installed sudo with "apt install sudo". Then following the anisble installation guide I installed Ansible in the container. Lastly, I installed nano so I could create the playbook in the container.
+
+Now in the playbook I included a command to update and upgrade apt. Then I included commands to install traceroute using the "apt" command. Then using the copy command to make a backup of the sudoers file which I named "sudoers.backup".
+Following this I creates groups and users with the group and user commands. With the user commands I was also able to assign the new users to one of the two groups. And then lastly I used the "lineinfile" command to edit the sudoers file to add the groups to have sudo. For the traceroute sudo powers the following line was appended to the end of the file, "%cit480 ALL=(ALL:ALL) /usr/sbin/traceroute". Once the playbook was created I was able to test is out on the localhost (container) and it worked like a charm.
+
+The second playbook needed to install a lamp stack with the affinity app just as the first lab. It started the same with creating a container, installing the basics and performing "apt update" and apt upgrade. Then I installed all the applications like nano, git etc using variables. Next I installed apache, ran it then installed mysql client. After I used the "timezone" command to change the timezone before installing the php apps. So next came the php apps, then I used the template command to edit the 3 conf files. Then I cloned the repo, changed ownership, created the Symbolic link and lastly install composer. At the every end I needed to restart apache2 and it was completed. 
