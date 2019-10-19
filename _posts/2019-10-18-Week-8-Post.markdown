@@ -1,0 +1,12 @@
+---
+layout: "post"
+title: "Week 8 Blog Post - 10/18"
+---
+
+Over the past 2 weeks we have had to work on Project 0, which in a nutshell is to host a secure website on AWS. We are to buy a domain, set up an infrastructure in AWS and host a secured website from an EC2 Instance. In the past, I have only created 2 websites, one which was in a VM and the other was actually on an EC2 instance. In the latter occurrence, I followed a guide on AWS and was able to successfully implement a LAMP stack on the instance and use WordPress to set up the website. The website was not secure nor did it have a proper domain. So this project would be similar but still new, plus the last time I had hosted a website was over a year ago.
+
+Though I did have some experience setting up an EC2 instance and setting up a domain, I was tasked to assist in securing the website. So to do this, I did research on the provided source, Let's Encrypt. When looking at "Let's Encrypt" I discovered the open source software tool, Certbot that uses certificates from Let's Encrypt to secure the website and allow for HTTPS traffic to the website.
+
+Certbot, being an open source tool is available to use for free. To use the tool, all that needs to be done is install it to the server then run some commands. So for our EC2 instance we used the Ubuntu Server 18.04 image. On the Certbot page there are instructions to install Certbot onto an Ubuntu Server. Pretty straight forward, adding Certbots respective repositories to the instance. Once installed, we were able to execute the commands to run Certbot.
+
+Certbot has an set up that automatically takes care of everything, changed the respective .config files to route traffic to https. Unfortunately the auto set up did not work for us. We had to manually enter the domain name in the set up process. But once doing so we were given a message saying the certification was successful. But before the website could show that it is secure, Apache needed to be restarted. Once restarting Apache we were able to access the site and the lock on chrome would show that it is secure.

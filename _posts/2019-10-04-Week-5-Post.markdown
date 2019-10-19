@@ -1,26 +1,16 @@
 ---
 layout: "post"
-title: "Week 6 Blog Post - 10/4"
+title: "Week 6 Blog Post - 10/04"
 ---
 
 Last year, in the Spring semester, I join a project/team at school known as SAPS, Student Academic Progression System. The SAPS project is a pilot system that visualizes the manual process of a student obtaining a permission number from their respective department.
 
-
-
 With the system a student can log in, select the section for which they need a permission number, submit a copy of their most recent degree progress report (DPR), and request a permission number. This request is then received by the department where an advisor or chair reviews the request and makes a decision, to provide or deny the permission number request.
 
-
-
-The semester I joined I was brought in to develop a method to simplify the process of formatting the raw data which contained information such as class section, class name, professor, class room etc. The SAPS system was not integrated with the school's system so the data needed to be migrated from the schools system to the SAPS system. Not all the information that came from the raw data was necessary to migrate into SAPS. So our task was to keep an easy process that would pull the information needed, format it so that it could be staged then pushed to the system.
-
-
+The semester I joined I was brought in to develop a method to simplify the process of formatting the raw data which contained information such as class section, class name, professor, class room etc. The SAPS system was not integrated with the school’s system so the data needed to be migrated from the schools system to the SAPS system. Not all the information that came from the raw data was necessary to migrate into SAPS. So our task was to keep an easy process that would pull the information needed, format it so that it could be staged then pushed to the system.
 
 The original process was demoed to us so that we could know how the data needed to be formatted. For the first half of the semester I played around with excel, which was how the raw data was given to us, and tried different methods to format the data so it could be staged. After a week or two I created a template in excel that would format the data as needed. The template was a workbook that would accept the individual spreadsheets and would used varies formulas and look ups to format the data so it would be ready to upload.
 
-
-
 Once the data was ready to be staged we would used Microsoft SQL Server Management Studio to stage the data from our newly created CSV file. Once the new schedule of classes was on the database we were able to import the new classes to the existing tables, ready to be used by the system.
-
-
 
 This process is meant to be done every semester. Ever since Spring 2019 I have been using my template to easily format the raw data then upload it to the system. With the winter semester right around the corner I will be once again called to upload the data for the Winter semester.
