@@ -1,0 +1,52 @@
+---
+layout: "post"
+title: "Using Terraform to Spin a Basic AWS EC2 Instance- 11/02"
+---
+
+Recently, we have been tasked to use Terraform, an "open-source infrastructure as code software tool", to set up an infrastructure on AWS. Within the infrastructure, we will be using AWS EC2 instances to serve our web applications.
+
+Terraform is a tool that allows for creating, modifying and manage infrastructures for most of the popular service providers such as; AWS, Microsoft Azure, Google Cloud Platform and many others. Using Terraform gives the ability to easily run/initiate simple cloud computing instances to even a whole data center. This is done by Terraform's "Infrastructure as Code" which is the code that blueprints the configuration of whatever component you want to set up and these blueprints can easily shared and also be reused.
+
+ Creating an AWS EC2 instance can of course be done manually using the web interface. But this can also be done using Terraform. You can create an EC2 with multiple customization options such as attaching the instance to a VPC, key-pairs, tags etc. I will provide a basic Terraform script to spin up an EC2 instance which will have default configurations.
+
+Below is a basic script that can be used and ran on Terraform to create an EC2 instance.
+
+provider "aws" {
+  region = "<region_name>"
+}
+
+
+ resource "aws_instance" "<name>" {
+   ami  =  "<ami id>"
+   instance_type   = "t2.micro"
+   key_name        = "<key-pair-name>"
+
+   tags = {
+     Name = "<tag_name>"
+   }
+
+ }
+
+So in the top block, it let's Terraform know we will be using AWS as the service provider and let it know which reigon to work with. Here <region_name> needs to be replaced with the region of your choice.
+
+The second block is where the actual EC2 instance configuration is being done.
+In the first line shows that we will be creating an EC2 instance and we can give it a name that will be used as a referenced by Terraform denoted by <name>
+The next line "ami  =  "<ami id>"" tells Terraform which AMI (Amazon Machine Image) will be used to create the EC2 instance. This can be found in the AWS console.
+
+An example is ami-06d51e91cea0dac8d
+
+Next the line "instance_type   = "t2.micro"" tells Terraform what kind of instance type will be used. In this script it will be using t2.micro which is part of the Free container
+
+The following line will contain the name of the key pair to be associated with the instance to allow to SSH into the instance.
+
+The last block will add a "Name" tag to the instance which helps for filtering and here <tag_name> can be replaced with anything.
+
+With the following code inside a .tf file you will be able create an EC2 instance.
+
+The command to run this Terraform will be
+
+terraform plan
+
+then
+
+terraform apply
