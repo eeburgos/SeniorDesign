@@ -1,0 +1,42 @@
+---
+layout: "post"
+title: "Select n number of records with Oracle SQL 11/08"
+---
+
+SQL, Structured Query Language, is the programming language used to manage and interact with relational databases.
+
+There are many flavors of relational database management systems being used today. There are open-source options such as MySQl, Maria DB, PostgreSQL, MongoDB and many more. There are of course other close sourced options the most popular being Microsoft SQL Server and Oracle Database.
+
+Though there are many RDMS (Relational Database Management Systems) all use SQL to interact with the system, but there are slight variations to SQL depending on the RDMS. Most of the commands and syntax are the same across the board but one system's method might differ from another. For example:
+
+In Microsoft SQL Sever, the function to get the current time of the system is GETDATE()
+
+Where as in Oracle Database the function would be SYSDATE
+
+Both will return the current date and time.
+
+Given the differences in some functionality, this tutorial will cover the way to pull a certain number of results from a query using Oracle Database.
+
+In Microsoft SQL, the command is quite easy, at the beginning of the Select statement you can simply include "TOP" right after "Select" and then the number of entries you would like to Select as such:
+
+Select TOP n <column_name>
+FROM <table_name>
+
+Here n will be replaced with the number you would like to pull.
+
+For Oracle, you will need to use a psuedocolumn known as ROWNUM. ROWNUM will be used in the Where clause as such
+
+Select <column_name>
+FROM <table_name>
+WHERE ROWNUM <= 10
+
+Here you will need to use operators like > or < since each row will be getting a number and to select the first 10 you will need to include all rows from 1 to 10.
+
+There is a limitation to this though, if there is an Order By clause then this method will not work but there is a way to get around this limitation.
+
+By using "fetch first n row only" at the very end of the query you can pull the n number of rows ater they have been sorted. This will look as such:
+
+Select <column_name>, <column_name2>
+FROM <table_name>
+Order By <column_name2>
+fetch first n row only
