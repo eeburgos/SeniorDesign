@@ -3,7 +3,7 @@ layout: "post"
 title: "Concat Rows with Oracle SQL - Week 12 "
 ---
 
-here are times while working with a table where you would want to group several rows together that share a common field. Not only group the rows but actually merge the contents of several rows into one field by a common field. For example let's say you have the following data in a table named "Inventory":
+There are times while working with a table where you would want to group several rows together that share a common field. Not only group the rows but actually merge the contents of several rows into one field by a common field. For example let's say you have the following data in a table named "Inventory":
 
 
 
@@ -11,23 +11,23 @@ AISLE                     |              ITEM                      |            
 
 
 
-1                                        Banana                                                   $1.00
+1                         |              Banana                    |                             $1.00
 
-1                                        Apple                                                    $3.00
+1                         |              Apple                     |                              $3.00
 
-1                                        Cherries                                                 $4.00
+1                         |              Cherries                  |                              $4.00
 
-1                                        Orange                                                   $5.00
+1                         |              Orange                    |                              $5.00
 
-2                                        Bread                                                    $5.00
+2                         |              Bread                     |                              $5.00
 
-2                                        Chips                                                    $3.00
+2                         |              Chips                     |                              $3.00
 
-3                                        Soap                                                     $3.00
+3                         |              Soap                      |                              $3.00
 
-3                                        Paper Towels                                             $8.00
+3                         |              Paper Towels              |                              $8.00
 
-3                                        Dust Pan                                                 $5.00
+3                         |              Dust Pan                  |                              $5.00
 
 
 
@@ -39,11 +39,11 @@ AISLE                     |                                    ITEM             
 
 
 
-1                                                              Banana, Apple, Cherries, Orange                             
+1                         |                                    Banana, Apple, Cherries, Orange                             
 
-2                                                              Chips, Bread
+2                         |                                    Chips, Bread
 
-3                                                              Soap, Dust Pan, Paper Towels
+3                         |                                    Soap, Dust Pan, Paper Towels
 
 
 
@@ -63,7 +63,7 @@ LISTAGG(measure_expr , '<delimiter>')
 
   WITHIN GROUP (order_by_clause)
 
- 
+
 
 Here measure_expr is the column you wish to condense (concat), in the example this would be "ITEM"
 
