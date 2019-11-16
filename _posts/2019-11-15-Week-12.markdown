@@ -1,0 +1,90 @@
+---
+layout: "post"
+title: "Concat Rows with Oracle SQL - Week 12 "
+---
+
+here are times while working with a table where you would want to group several rows together that share a common field. Not only group the rows but actually merge the contents of several rows into one field by a common field. For example let's say you have the following data in a table named "Inventory":
+
+
+
+AISLE                     |              ITEM                      |                              PRICE                    |
+
+
+
+1                                        Banana                                                   $1.00
+
+1                                        Apple                                                    $3.00
+
+1                                        Cherries                                                 $4.00
+
+1                                        Orange                                                   $5.00
+
+2                                        Bread                                                    $5.00
+
+2                                        Chips                                                    $3.00
+
+3                                        Soap                                                     $3.00
+
+3                                        Paper Towels                                             $8.00
+
+3                                        Dust Pan                                                 $5.00
+
+
+
+So for this table we have items and their respective aisles. Let's say we would want to condense this table to only 3 rows, one for each aisle and that contains the items in those aisles in one field. Something like:
+
+
+
+AISLE                     |                                    ITEM                                                      |             
+
+
+
+1                                                              Banana, Apple, Cherries, Orange                             
+
+2                                                              Chips, Bread
+
+3                                                              Soap, Dust Pan, Paper Towels
+
+
+
+There is a simple function in Oracle for this exact purpose which we will explore.
+
+
+
+This function is known as LISTAGG.
+
+
+
+To achieve this you will need to use LISTAGG which has a syntax of
+
+
+
+LISTAGG(measure_expr , '<delimiter>')
+
+  WITHIN GROUP (order_by_clause)
+
+ 
+
+Here measure_expr is the column you wish to condense (concat), in the example this would be "ITEM"
+
+Next the <delimiter> is simply the character(s) you wish to separate the measure_expr in your final result, in the example this would be ", "
+
+The order_by_clause determines the order in which the values are returned in the end result. In the example we can order by the "Price" column, in order of lowest to highest.
+
+
+
+So to achieve the desired table from the original "Inventory" table the query would be:
+
+
+
+SELECT AISLE
+
+                                LISTAGG( ITEM, " ," ) WITHIN GROUP (ORDER BY PRICE)
+
+FROM Inventory
+
+ORDER BY AISLE
+
+
+
+This query will result in the desired table above. You will notice that then though "Price" was in the original table, it is not in the result table but it could still be used to organize the results.
