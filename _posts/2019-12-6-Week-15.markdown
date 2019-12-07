@@ -1,0 +1,51 @@
+---
+layout: "post"
+title: "Ansible Roles Directory Structure - Week 15 "
+---
+
+Ansible is an open-source tool that is available on Unix-like systems such as Linux. The tool is used for configuring, managing and provisioning and deploying applications/software to other systems. Ansible helps automate system configuring that would be otherwise done manually. For instance if configuring a web server (installing a LAMP stack) which can be done with little effort on a few machines. But if the task at hand involved 10s or even 100s of machines this seemingly easy task can become long and tedious. With Ansible, you are able to create scripts that installs all the packages needed for a web server and have it apply to multiple machines at once.
+
+Ansible can achieve this by Playbooks, standalone scripts that can be reused. Another way is by using roles which we will explore today.
+
+Roles is a way to structure a set up, that allows for modularity. This is achieved by having a collection of steps that defined in YAML files that can be easily manipulated, included and excluded. These steps and files for them are placed in a predefined directory structure. The directory structure is what allows the modularity and easy manipulation.
+
+Roles are stored in the /etc/ansible/roles directory. When a role is created the predefined directory structure is created, the structure is as follows:
+.
+└── [role_name]
+    ├── defaults
+    │   └── main.yml
+    ├── files
+    ├── handlers
+    │   └── main.yml
+    ├── meta
+    │   └── main.yml
+    ├── README.md
+    ├── tasks
+    │   └── main.yml
+    ├── templates
+    └── vars
+        └── main.yml
+
+During execution the each folder has a purpose.
+
+The default folder contains default variables.
+
+The files folder contains static files that will be used during execution, just as files to be copied over to the remote machine.
+
+The handlers folder contains handlers to be using in or out of the role. This could be something such as event, for instance restarting apache if the config file is changed.
+
+The meta folder contains meta data about the role, its purpose, owner etc.
+
+The tasks folder contains the actual tasks/steps needed to complete the role.
+
+The template folder contains files that will also be used for the configuration but that can be dynamically changed using variables.
+
+Lastly, vars conatins more variable but that are not default and receive higher priority.
+
+When a role is executed it used information from all these directories to complete it's task, for instance, configuring a LAMP stack.
+
+A role is created via the command
+
+ansible-galaxy init [name of role] --offline
+
+Once the command is executed the file structure is created and ready for files to be placed within them.
