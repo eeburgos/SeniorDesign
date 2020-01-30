@@ -1,0 +1,20 @@
+---
+layout: "post"
+title: " Brief Into to QuickBase - Spring 2020 Week 1 "
+---
+
+QuickBase is a cloud based software platform for creating web applications. The platform uses cloud databases which allow users to create tables from scratch with minimal coding knowledge. The methodology behind QuickBase is allowing data to be easily managed to fit any need. By creating a cloud database the data can be accessed anywhere, anytime. Then building from those databases with automation processes a user can create an application with a dashboard this is completely customized to fit the applications needs.
+
+Getting started with QuickBase for a personal use is easy, as the company provides a "builder" program which allows you to create and account and start building applications albeit with some limitations to the full licensed version. To get started with QuickBase as a builder you can sign up at https://www.quickbase.com/builder-program. Here you will be able to create a builder account for free and begin building a database then creating an application.
+
+The first step after creating an account and logging in is starting a new application. You can do this by selecting "Create new app" button from the "My Apps" tab. From her you can then decide on how you would like to begin your application
+
+  Via a Template
+  From scratch
+  Or import data from a spreadsheet
+
+QuickBase also has a community where you can choose from prebuilt applications where all you need to do is import your data.
+
+This time around we can start an application from scratch. Doing so bring you to the Visual Builder. This Visual Builder is where you will create your various tables for your application. You can create a new table by dragging and dropping a new table into the middle workspace where you then can name your able. After the table is completed you can drag and drop datatypes into your table and customize the various properties. All this is user friendly and easy to learn. 
+
+Once multiple tables are created, you can click "Done" and you have just created the data for your application. In the next blog I will explain how to relate these tables together and then create the first entries in our tables.
