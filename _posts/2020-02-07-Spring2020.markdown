@@ -1,0 +1,178 @@
+---
+layout: "post"
+title: "Intro to JOIN in SQL - Spring 2020 Week 2"
+---
+
+Running queries with SQL can be very simple and straight forward when only pulling data from one single table. The typical structure for SQL queries is as follows
+
+
+
+Select    [Fields],
+
+          [Fields]
+
+
+
+FROM   [Table]
+
+
+
+WHERE [Criteria]
+
+
+
+For this example, you would be working with a table such as this
+
+
+
+OrderID    | OrderDate
+
+1234       | 2/7/2020
+
+5678       | 1/8/2020
+
+1345       | 1/25/2020
+
+3749       | 2/7/2020
+
+5678       | 1/30/2020
+
+3834       | 2/7/2020
+
+1839       | 1/14/2020
+
+5678       | 1/7/2020
+
+1728       | 2/7/2020
+
+1929       | 2/2/2020
+
+5678       | 2/3/2020
+
+2762       | 1/13/2020
+
+
+
+But 9 times out of 10, you will be asked to pull data from more than one table. In a relational database, tables have relationships with other tables. A table could be connected to one, two tables or ten.
+
+
+
+For example if you had the following tables
+
+
+
+OrderID | CustomerID    | OrderDate      
+
+1234    | 0001          | 2/7/2020
+
+5678    | 0001          | 1/8/2020
+
+1345    | 0023          | 1/25/2020
+
+3749    | 0045          | 2/7/2020
+
+5678    | 0067          | 1/30/2020
+
+3834    | 0012          | 2/7/2020
+
+1839    | 0001          | 1/14/2020
+
+5678    | 0034          | 1/7/2020
+
+1728    | 0023          | 2/7/2020
+
+1929    | 0045          | 2/2/2020
+
+5678    | 0076          | 2/3/2020
+
+2762    | 0098          | 1/13/2020
+
+
+
+CustomerID        | CustomerFirstName    | CustomerLastName
+
+0001              | Edwin                | Burgos
+
+0002              | Eric                 | Johnson
+
+0023              | Linda                | Stone
+
+0045              | Jon                  | Jacobs
+
+0067              | Stephanie            | Morales
+
+0012              | Alex                 | Gomez
+
+0034              | Lisa                 | Smith
+
+0023              | Nick                 | Yu
+
+0076              | Emma                 | Jenkins
+
+0098              | Jorge                | Alveraz
+
+
+
+If you had these tables and were tasked to pull a table with the OrderID, the name of the Customer and the OrderDate you would need data from both of the tables. In SQL, you have the ability to combine multiple tables based on a related field, this method is known and JOIN.
+
+
+
+To perform a JOIN, the tables you wish to combine need to share a common field, a field that is in both tables. In this case, both tables have CustomerID field so this will be out common field. For our example we will be using an Inner Join, which combines the records that are common in BOTH tables. You can think of it as a venn diagram, the records pulled will be those in the middle.
+
+
+
+The structure for a JOIN query is similar to a normal query but with in an include JOIN statement after the FROM statement.
+
+
+
+
+
+Select    [Table1].[Field1],
+
+          [Table2].[Field2]
+
+
+
+FROM   [Table1]
+
+
+
+INNER JOIN [Table2] ON [Table2].[CommonField2] = [Table1].[CommonField1]
+
+
+
+So with our identified common field we can create our query.
+
+
+
+Select    Orders.OrderID,
+
+          Customers.CustomerFirstName,
+
+          Customers.CustomerLastName,
+
+          Orders.OrderDate
+
+
+
+FROM   Orders
+
+
+
+INNER JOIN Customers ON Customers.CustomerID = Orders.CustomerID
+
+WHERE Customers.CustomerLastName = 'Burgos'
+
+
+
+
+
+This will produce the following results
+
+OrderID | CustomerFirstName | CustomerLastName  | OrderDate      
+
+1234    | Edwin             | Burgos            | 2/7/2020
+
+5678    | Edwin             | Burgos            | 1/8/2020
+
+1839    | Edwin             | Burgos            | 1/14/2020
