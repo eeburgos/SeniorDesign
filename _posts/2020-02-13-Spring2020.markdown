@@ -1,0 +1,32 @@
+---
+layout: "post"
+title: "Comparing differences between 2 tables with JOIN in SQL - Spring 2020 Week 3"
+---
+
+During my time using interacting with databases I have ran into a situation where I wanted to INSERT some new data into an existing table but could not because some records already existed in the table. In these situations I did not know exactly which records already existed in the table. I had a set of data (csv) file that had over 100 records and a table that had over 500 records. I needed a way to find out which records already existed in the database to then remove them from the data I was trying to INSERT. The way I was able to overcome this and find out which records needed to be added was by using an OUTER JOIN.
+
+There are two types of OUTER JOINS in SQL, LEFT OUTER JOIN (LEFT JOIN) and RIGHT OUTER JOIN (RIGHT JOIN). Both could be used to produce the same outcome.
+
+The two JOINS will combine two tables via a common field. A typical JOIN (INNER JOIN) will combine tables and pull those records where the common fields value is the same in BOTH. In the case of OUTER JOINS, the records being pulled will be all the records from one table and only the records from the second table that have the same value as the first table. Thinking of this in the form of a venn diagram, this will be the when one circle is shaded and when they over lap.
+
+In these examples we will us RIGHT JOIN, which means it will pull all the records from the second table, the RIGHT side.
+
+The structure for this SQL query is as follows
+
+
+
+Select    [Table1][Field1],
+
+          [Table2][Field2]
+
+
+
+FROM   [Table1] T1
+
+LEFT JOIN [Table2] T2 ON T1.[Field1] = T2.[Field2]
+
+This will give you all the records of T2 and only the matching records from T1 that have the same value as T2.
+
+If there are no matching records for the second table, in this case T1, the value will show as NULL, indicating there is not record of that value in the first table. For my issue this was representative of the table in the database.
+
+So when I ran the SQL query as the one above, I was able to see where there was a value of NULL for T1's values and this told me that the corresponding values (record) in T2 was not in the database. Therefore I was able to get those certain records and INSERT them into the database successfully.
