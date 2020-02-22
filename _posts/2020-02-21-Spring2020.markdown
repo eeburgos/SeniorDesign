@@ -1,0 +1,24 @@
+---
+layout: "post"
+title: "Finding count Unique values in Excel- Spring 2020 Week 4"
+---
+
+Let's say you are working in Excel you have a lot of data in your table, 100s of rows of data. You need to go through the data and find out the number of unique records in the data set. Recently at work I ran into this exact scenerio. I had a spreadsheet with users and I needed to find the number of unique records, in this case users. There is no one function to accomplish this, instead a combination of functions can be used to find out the number of unique values in a column.
+
+In this example, I was able to use a combination of 3 simple functions. Those 3 functions were; SUM(), IF(), and COUNTIF(). These t3 functions executed in the correct way will give you the count of unique values in a column.
+
+For Example lets say you have the following table
+
+Users			         | Email Address
+EdwinB1019 		     | eeb@csun.edu
+StephanieM0407	   | svm@csun.edu
+Justina0411		     | jmc@csun.edu
+William0601		     | web@csun.edu
+Edwin1019		       | eeb@csun
+Jocelin1118		     | jo@csun.edu
+StephanieM0407	   | svm@csun
+
+In this example set we have only 5 unique users. This is not hard to find by just looking at it but if your data has 100s of records, it can be difficult to get the unique count.
+
+To get started we will use the COUNTIF function. The COUNTIF function looks like this: =COUNTIF(range of cells, criteria).
+With the function we can enter a range of cells
