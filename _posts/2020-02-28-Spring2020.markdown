@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "Finding count Unique values in Excel- Spring 2020 Week 4"
+title: "Finding count Unique values in Excel- Spring 2020 Week 5"
 ---
 
 Let's say you are working in Excel you have a lot of data in your table, 100s of rows of data. You need to go through the data and find out the number of unique records in the data set. Recently at work I ran into this exact scenerio. I had a spreadsheet with users and I needed to find the number of unique records, in this case users. There is no one function to accomplish this, instead a combination of functions can be used to find out the number of unique values in a column.
