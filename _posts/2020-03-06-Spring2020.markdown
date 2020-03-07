@@ -24,12 +24,14 @@ With Markdown language there are actually 3 different ways to achieve the same h
 ### Using ``#``
 
 The first method of having heads is using the (``#``) character.
+
         # - Heading 1
-        ## - Heading 2
+        ## - Heading 2      
         ### - Heading 3
         #### - Heading 4
         ##### - Heading 5
         ###### - Heading 6
+        
 By using the (``#``) in front of text you can get the same effects as using heading tags from HTML
 
 Here is an example of Heading 1 by using this method
