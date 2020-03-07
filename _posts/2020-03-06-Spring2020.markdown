@@ -1,0 +1,62 @@
+---
+layout: "post"
+title: "Basic Syntax of Markdown Language"
+---
+
+# Markdown Language Basics
+
+Markdown language is a markup language that tries to be as straight forward as possible by uses plain-text-formatting syntax. The syntax is simple to follow and does not use tags the way HTML does. Markdown is designed to be easily readable and is actually the language used by this Jekyll website.
+
+Typically one of the first styling tag one learns when working with HTML is the header styling tags. (e.g. <h1></h1>) So this will be the first styling syntax we will explore
+
+## Headings
+
+The usual heading tags for HTML are
+- <h1></h1>
+- <h2></h2>
+- <h3></h3>
+- <h4></h4>
+- <h5></h5>
+- <h6></h6>
+
+With Markdown language there are actually 3 different ways to achieve the same heading effects. One of the ways gives you all the different levels of heading styles while the last two
+
+### Using ``#``
+
+The first method of having heads is using the (``#``) character.
+        # - Heading 1
+        ## - Heading 2
+        ### - Heading 3
+        #### - Heading 4
+        ##### - Heading 5
+        ###### - Heading 6
+By using the (``#``) in front of text you can get the same effects as using heading tags from HTML
+
+Here is an example of Heading 1 by using this method
+``# Heading 1``
+#Heading 1
+
+### Using ``=`` for Level 1
+
+The second method is by using (``=``) in the line right below the text that is desired to be styled. You can use as many number of (``=``). This method will give the text the effects of level 1 heading.
+
+Here an example of Heading 1 using this method
+Heading 1
+``==``
+
+Heading 1
+==
+
+### Using ``-`` for Level 2
+The second method is by using (``-``) in the line right below the text that is desired to be styled. You can use as many number of (``-``). This method will give the text the effects of level 2 heading.
+
+Here an example of Heading 2 using this method
+Heading 2
+``--``
+
+Heading 2
+--
+
+The only way to get heading levels below 2 is to use the (``#``) method.
+
+  
