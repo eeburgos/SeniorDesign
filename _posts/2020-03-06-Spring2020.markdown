@@ -31,7 +31,7 @@ The first method of having heads is using the (``#``) character.
         #### - Heading 4
         ##### - Heading 5
         ###### - Heading 6
-        
+
 By using the (``#``) in front of text you can get the same effects as using heading tags from HTML
 
 Here is an example of Heading 1 by using this method
@@ -43,20 +43,22 @@ Here is an example of Heading 1 by using this method
 The second method is by using (``=``) in the line right below the text that is desired to be styled. You can use as many number of (``=``). This method will give the text the effects of level 1 heading.
 
 Here an example of Heading 1 using this method
-Heading 1
-``==``
 
-Heading 1
-==
+        Heading 1
+        ``==``
+
+        Heading 1
+        ==
 
 ### Using ``-`` for Level 2
 The second method is by using (``-``) in the line right below the text that is desired to be styled. You can use as many number of (``-``). This method will give the text the effects of level 2 heading.
 
 Here an example of Heading 2 using this method
-Heading 2
-``--``
 
-Heading 2
---
+        Heading 2
+        ``--``
+
+        Heading 2
+        --
 
 The only way to get heading levels below 2 is to use the (``#``) method.
