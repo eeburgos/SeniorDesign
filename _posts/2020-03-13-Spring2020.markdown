@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "Hyperlinks and Images in Markdown Language"
+title: "Hyperlinks in Markdown Language"
 ---
 
 # Hyperlinks
