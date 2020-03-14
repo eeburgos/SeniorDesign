@@ -1,0 +1,35 @@
+---
+layout: "post"
+title: "Hyperlinks and Images in Markdown Language"
+---
+
+# Hyperlinks
+Adding a link to a page using Markdown can be done 2 different ways. The first and simplest way is by using enclosing the entire URL between angle brackets. `<>`
+
+        <https://www.csun.edu>
+
+This will produce a link with no title. Like the link below
+<https://www.csun.edu>
+
+This method also works for creating links to email addresses.
+
+        <yourname@email.com>
+
+This produces
+<yourname@email.com>
+
+
+The second method allows you to use a title for the link. For example, if you wanted to have the word "CSUN" be the link that is clickable.
+
+      This is a link to [CSUN](https://www.csun.edu)
+
+Was stated before this will make the link from what ever string you want. As so
+This is a link to [CSUN](https://www.csun.edu)
+
+
+The last attribute that can be implemented when creating links, is creating a  title to be displayed when you hover over a link.
+
+        This is a link to [CSUN](https://www.csun.edu "My future alma mater")
+
+This will give the link a title to give more description of the link.
+This is a link to [CSUN](https://www.csun.edu "My future alma mater")
