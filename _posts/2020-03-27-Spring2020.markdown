@@ -1,0 +1,65 @@
+---
+layout: "post"
+title: "Quick Intro to BASH"
+---
+
+# BASH
+Bash is a command shell for UNIX, it's name is an acronym for Bourne-again shell. BASH was initially released in 1989 and was written in C. The language was created as a replacement for its predecessor, Bourne Shell. BASH is now widely used as the default shell for most Linux distros for example Ubuntu and was even macOS.
+
+BASH runs in a text window where it can read and execute commands from a proprietary file known as shell script. (.sh). Like other shells it to uses variables, substitution commands, piping, conditional tests and iterations. 
+
+## Basic BASH commands
+
+Bash being the default shell for most Linux distros, the basics of navigating the file system is a must know.
+
+For starters, an important command is the `ls` command which will list all the files and folders in the current directory. For example using ls in my current home directory I get
+
+                edw1ener@edw1ener:~
+                $ ls
+                000-default.conf       cit_480-edwin.zip      index.html      SeniorDesignBlog
+                ansible1.yml           CIT484_Project1        Lab1            snap
+                ansible2.yml           Desktop                MARS-P1         Templates
+                apache2.conf           dockerfile             MARS-Project1   Terraform
+                aws.yml                Documents              Music           Videos
+                BenefitsReciepts.pdf   Downloads              Pictures       'VirtualBox VMs'
+                certbot                gems                   Project1        Website
+                cit160                 GraduationRecipt.pdf   Public
+
+This will simply give you a list of the files in a grid fashion, a more effective way to view specifics of the files is to follow the command with the the l flag. As `ls -l` this will produce an output of
+
+                edw1ener@edw1ener:~
+                $ ls -l
+                total 248
+                -rw-r--r-- 1 root     root      1339 Sep  7  2019  000-default.conf
+                -rw-r--r-- 1 root     root      1447 Sep 27 22:41  ansible1.yml
+                -rw-r--r-- 1 root     root      2750 Sep 27 22:29  ansible2.yml
+                -rw-r--r-- 1 root     root      7236 Sep  7  2019  apache2.conf
+                -rw-rw-r-- 1 edw1ener edw1ener   223 Oct 16 20:54  aws.yml
+                -rw-rw-r-- 1 edw1ener edw1ener 60536 Oct  2 22:16  BenefitsReciepts.pdf
+                -rw-rw-r-- 1 edw1ener edw1ener  3899 Oct  9 20:08  certbot
+                drwxr-xr-x 5 edw1ener edw1ener  4096 Sep  5  2019  cit160
+                -rw-rw-r-- 1 edw1ener edw1ener  4691 Sep 14  2019  cit_480-edwin.zip
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Sep 24  2019  CIT484_Project1
+                drwxr-xr-x 5 edw1ener edw1ener  4096 Dec  4 00:28  Desktop
+                -rw-rw-r-- 1 edw1ener edw1ener  1059 Sep 14  2019  dockerfile
+                drwxr-xr-x 4 edw1ener edw1ener  4096 Nov 13 20:55  Documents
+                drwxr-xr-x 3 edw1ener edw1ener  4096 Feb 21 20:53  Downloads
+                drwxr-xr-x 9 edw1ener edw1ener  4096 Sep  5  2019  gems
+                -rw-rw-r-- 1 edw1ener edw1ener 56913 Sep 23  2019  GraduationRecipt.pdf
+                -rw-r--r-- 1 root     root     10918 Sep  7  2019  index.html
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Sep  7  2019  Lab1
+                drwxr-xr-x 3 edw1ener edw1ener  4096 Nov  2 16:01  MARS-P1
+                drwxr-xr-x 5 edw1ener edw1ener  4096 Nov  9 14:32  MARS-Project1
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Aug 28  2019  Music
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Feb 14 12:13  Pictures
+                drwxr-xr-x 3 edw1ener edw1ener  4096 Nov  9 13:58  Project1
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Aug 28  2019  Public
+                drwxr-xr-x 7 edw1ener edw1ener  4096 Sep  5  2019  SeniorDesignBlog
+                drwxr-xr-x 7 edw1ener edw1ener  4096 Nov  6 22:15  snap
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Aug 28  2019  Templates
+                drwxr-xr-x 3 edw1ener edw1ener  4096 Nov 11 16:31  Terraform
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Aug 28  2019  Videos
+                drwxrwxr-x 4 edw1ener edw1ener  4096 Oct  5 16:04 'VirtualBox VMs'
+                drwxr-xr-x 2 edw1ener edw1ener  4096 Dec 19 17:36  Website
+
+Now that you can see the files and folders the way to navigate through folders is by using the `cd` command. The `cd` command stands for change directory. The way to move up within a folder structure is by using `cd ..`
