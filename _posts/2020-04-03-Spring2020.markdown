@@ -1,0 +1,54 @@
+---
+layout: "post"
+title: "Adding and Updating Records in a table with SQL"
+---
+
+While working with databases there might be times when you would want to add a new record to the table, perhaps a new customer needs to be added to the table. There might be times when you might been to update an existing record on the table, perhaps a customer now has a new phone number.
+
+With the tutorial below explain how to add a new record to an existing table as well as update values for a certain record.
+
+##Adding a new record
+Suppose you have the table of "Customer_Info" below
+
+| Customer_Name | Customer_Phone | Customer_Zip_Code |
+| Edwin Burgos	| 1213456789	   | 81932			       |
+
+If you we asked to add a new record you could use the following format
+
+INSERT INTO [Table_Name]
+(Field1, Field2, Field3, ...)
+VALUES (Value1,Value2, Value3, ...)
+
+Following this format will allow you to fill in the appropraite fields and values then add them to the table. So if you were looking to add a new customer to the Customer_Info table you would use something like:
+
+INSERT INTO [Table_Name]
+(Customer_Name, Customer_Phone, Customer_Zip_Code)
+VALUES ('Steph Morales', 1182345725, 83920)
+
+And this results in
+
+| Customer_Name | Customer_Phone | Customer_Zip_Code |
+| Edwin Burgos	| 1213456789	   | 81932			       |
+| Steph Morales	| 1182345725	   | 83920	           |
+
+
+## Updating an existing record
+Using the table from before, supposed you needed to update the phone number for an exiting customer.
+
+To do this you would follow the format below:
+
+UPDATE [Table_Name]
+SET Field2 = Value2, Field3 = Value3
+WHERE Field1 = [Unique_Value]
+
+So to update a record on our table, you would use:
+
+UPDATE Customer_Info
+SET Customer_Phone = 7896541234, Customer_Zip_Code = 78945
+WHERE Customer_Name = 'Steph Morales'
+
+This will give you the following table:
+
+| Customer_Name | Customer_Phone | Customer_Zip_Code |
+| Edwin Burgos	| 1213456789	   | 81932			       |
+| Steph Morales	| 7896541234	   | 78945			       |
