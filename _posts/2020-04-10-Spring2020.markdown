@@ -1,0 +1,24 @@
+---
+layout: "post"
+title: "What is VPN?"
+---
+Typically while using the internet in the comfort of our home we do not take security of our data into consideration. But while using the internet in public in coffee shops or other locations the concern on our data becomes real. How can we be so sure that our logins or other personal information are really being protected? The answer is you honestly can not be 100% certain and for situations such as this a VPN should be used to ensure that your data is being protected while on public networks.
+
+A VPN is a method used to browse the internet more securely by means of encryption. A VPN, Virtual Private Network, creates a "virtual" network that allows a user to connect and browse the internet all while keeping information private, giving the user a more secure and safe interaction.
+
+VPN achieves this level of protection and safely by creating a private virtual "tunnel" that encrypts a users data from the source which protects the information from being intercepted or interpreted.
+
+![VPN Tunnel](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoYzZA6Pr4usM1Tv5j-BNipdHjA9ZPtqIEnph9ASbNnjVVKN_c&usqp=CAU "VPN Tunnel")
+
+By encrypting the data on the users end before traveling through the internet, data is is traveling safely though the internet to the VPN server where it can then be sent securely to the internet. Then the information being sent back to the user gets sent to the VPN server, gets encrypted and sent back to the user where it is decrypted. This process means that data flow can not be viewed by any ease droppers or even your ISP.
+
+There are different forms of encryption that are used for different VPNs. But the concept is the same
+
+1. User data gets encrypted on the user machine and is sent to the VPN server
+2. The VPN server receives the data, decrypts it and send it to the respective end point
+3. The VPN relieves response, encrypts that data and sends it to the user
+4. The user receives the data and decrpyts it
+
+Because of this "tunnel" to the VPN provider, a user's device is then viewed by the internet at having an IP address from the same network as the VPN server. This allows companies to be able to host their own VPN servers and have employees work from home and access network resources as if they were physically connected to the company network.
+
+This concept of being seen as having a different IP than originally means that a persons geo location is protects since a user for instance can be in Los Angeles but their VPN server is in Texas. This would be seen as the user is browsing the web from Texas. This can become extremely handy as well for users who might want to browse a regionally locked website or view content not available in their own respective region. A user could user a VPN provider that uses servers in other regions allows them to view what they other was could not.
