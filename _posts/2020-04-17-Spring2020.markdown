@@ -1,0 +1,30 @@
+---
+layout: "post"
+title: "What are Raspberry Pis"
+---
+
+In recent years, Raspberry Pis have been showing up more and more. From being able to power a "magic mirror", a retro gaming emulator to even serving as a internet ad black hole. There are many uses for a Raspberry Pi, tons of DIY projects that given the circumstances would be a good way to pass the time. But what exactly is a Raspberry Pi
+
+At it's basic form Raspberry Pi is simply a series computers, small single board computers the size of a credit card. Raspberry Pis are create by a UK charity, Raspberry Pi Foundation. The charity aims to provide products to facilitate learning of computing.
+
+The computers have seen several iterations with difference variations in memory, processing power and peripheral support. The original Raspberry Pi, was released in 2012. It sported a
+- a Broadcom made SOC5
+- 512 MB of RAM
+- a 700 mHZ GPU
+- 2 full USB ports
+- a 10/100 ethernet port
+- an HDMI port
+- video RCA cable
+- 3.5 mm headphone jack
+- would require an SD card for storage and booting
+Raspberry Pi Foundation provides its own Debian-based flavor of Linux known as Raspbian. But various OS's could be loaded on such as Ubuntu, Windows 10 IoT Core, RISC OS and others.
+
+The current model being sold is the Raspberry Pi 4 which includes
+- USB C port
+- 2 Micro HDMI ports port
+- up to 4GB of RAM
+- 4 USB ports (2x 2.0 2x 3.0)
+- 3.5 mm headphone jack
+- Gigabit ethernet
+
+Raspberry Pis are meant to be used for a varitey of projects
