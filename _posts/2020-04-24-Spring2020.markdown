@@ -1,0 +1,46 @@
+---
+layout: "post"
+title: "WUsing CASE statement in SQL"
+---
+The ***IF*** statement in coding is one of the most, if not the most, popular conditional statement there is. The statement checks whether a condition is met and performs a action if the condition was met, was true, or another action if the condition was not met, was false. All programming languages use this logical comparision to perform tasks, most languages stick to using ***IF*** as is but not all languages explicitly use ***IF*** statements.
+
+Vanilla SQL does not use ***IF*** but instead has it's own form of performing a conditional statement. SQL used a statement known as ***CASE***. A ***CASE*** statement just as an ***IF*** statement evaluates if a condition is met and performs and action if the statement is true and a separate function if false. A ***CASE*** statement looks something like this
+
+		SELECT column_name,
+			CASE
+				WHEN condition THEN 'Result_1'
+				WHEN condition THEN 'Result_2'
+				ELSE 'Result_3'
+			END
+		FROM table_name;
+
+So in SQL, the format follows the structure above. You begin with the statement ***CASE*** then follows a ***WHEN*** followed by the condition to be tested. After there is a ***THEN*** which leads to the action. With this format in SQL you can have multiple conditions in one ***CASE*** statement. After all the conditions have been tested and there is an ***ELSE*** which will be the fail over action if all other conditions are not met. Then you close the statement with an ***END***.
+
+To explore how this can work in the real world imagine you have the following table (Issue_Log).
+
+
+|	Issue_ID	| Description		  | Priority  |
+|	1235		  | Can't pull data	| 2			    |
+|	7383		  | Blank screen		| 3			    |
+|	8770		  | Wrong font		  | 1			    |
+
+In this case we have a table with issues and lets say you want to display this data but would like to give a label to represent the priority scale to be more clear of which has a higher priority.
+
+You would be able to do this using ***CASE*** with the following SQL query
+
+		Select 	Issue_ID
+				Description
+				CASE
+					WHEN Priority = 1 THEN 'Low'
+					WHEN Priority = 2 THEN 'Medium'
+					WHEN Priority = 3 THEN 'High'
+				ELSE  'No Priority'
+				END
+		FROM Issue_Log
+
+This statement used the ***CASE*** statement to make conditional decisions to label the numerical priority hierarchy to be represented in words. So the result would be something like
+
+|	Issue_ID	| Description		  | Priority |
+|	1235		  | Can't pull data	| Medium	 |
+|	7383		  | Blank screen		| High		 |
+|	8770		  | Wrong font		  | Low		   |
