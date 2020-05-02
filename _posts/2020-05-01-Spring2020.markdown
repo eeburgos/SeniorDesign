@@ -1,0 +1,59 @@
+---
+layout: "post"
+title: "Using Procedures in SQL"
+---
+
+In languages such as bash and python you can create scripts that contain multiple commands and can executed. Scripts can be short like creating a folder then creating a text file within the newly created folder. Scripts can get as complicated as creating users, groups and assigning permissions. Scripts are convenient to execute repeatable actions, all the commands live in one file that can be executed at any time. Sql, even though it's not a scripting language, has a function that allows a developer to create a "script" that can contain one or several commands (queries), this function is known as a ***procedure***.
+
+***Procedures*** are pretty much scripts, they are prepared SQL queries that can be executed. These ***procedures*** are created and stored in the database itself. They can be simple or complex even being able to take parameters.
+
+To create a ***procedure*** you follow the syntax of
+
+		CREATE PROCEDURE [procedure_name]
+		AS
+		BEGIN
+		[SQL Query]
+		END;
+
+This will then create the ***procedure*** which is then able to be called by Using
+
+		EXEC [procedure_name]
+
+So for example, if you wanted to write a ***procedure*** that selects all customers from a table you can perform the following:
+
+		CREATE PROCEDURE SelectAllCustomers
+		AS
+		BEGIN
+			Select * FROM Customers
+		END;
+
+Then execute
+
+		EXECUTE SelectAllCustomers
+
+***Procedures*** can also have parameters. The way you do this is as follows:
+
+		CREATE PROCEDURE [procedure_name] @[parameter_name] [datatype]
+		AS
+		BEGIN
+		[SQL Query]
+		END;
+
+Where within your SQL query, you will have your parameter_name as @[parameter_name]
+And you would execute by
+
+		EXEC [procedure_name] @[parameter_name] = [value];
+
+You can have multiple parameters as in
+
+		CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @LastName @nvarchar(30)
+		AS
+		BEGIN
+			Select * FROM Customers
+			WHERE City = @City
+			AND LastName = @LastName
+		END;
+
+And execute within
+
+		EXECUTE SelectAllCustomers @City = 'Los Angeles', @Name = 'Smith'
